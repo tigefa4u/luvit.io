@@ -53,10 +53,11 @@ The final binary will be at `build/luvi` on most platforms (cmake decides this p
 
 ```sh
 git clone --recursive https://github.com/luvit/lit.git lit-src
-./build/luvi lit-src -- make lit-src
+cd lit-src
+./build/luvi . -- make . path/to/luvi
 ```
 
-*Note: if you cloned lit source in to a directory named `lit`, you should to `cd path/to/lit` and then `path/to/luvi . -- make .`*
+*Note: if you cloned lit source into the same directory as luvi, then `path/to/luvi` in `lit-src` will be `../luvi/build/luvi`*
 
 Or if you want the latest lit release as a zip:
 
@@ -68,7 +69,7 @@ curl https://lit.luvit.io/packages/luvit/lit/latest.zip > lit.zip
 This will create a `lit` executable in your current directory.  Then you can continue to build luvit normally with:
 
 ```sh
-lit make github://luvit/luvit
+lit make lit://luvit/luvit
 ```
 
 And put `lit` and `luvit` in your system path.
